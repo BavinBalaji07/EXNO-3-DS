@@ -36,14 +36,18 @@ df=pd.read_csv("Encoding Data.csv") df
 
 <img width="1018" height="570" alt="image" src="https://github.com/user-attachments/assets/23fa25c6-db04-46ce-aa7d-db00cc9e64e1" />
 
-from sklearn.preprocessing import LabelEncoder,OrdinalEncoder pm=['Hot','Warm','Cold'] e1=OrdinalEncoder(categories=[pm]) e1.fit_transform(df[["ord_2"]])
+from sklearn.preprocessing import LabelEncoder,OrdinalEncoder pm=['Hot','Warm','Cold']
+e1=OrdinalEncoder(categories=[pm]) e1.fit_transform(df[["ord_2"]])
 
 <img width="740" height="352" alt="image" src="https://github.com/user-attachments/assets/3d49c02e-ba7d-446e-844f-2f5f79e5a9c3" />
 
 df['bo2']=e1.fit_transform(df[["ord_2"]]) df
+
 <img width="722" height="528" alt="image" src="https://github.com/user-attachments/assets/8c280406-1604-4603-a3f8-deff97846995" />
 
-le=LabelEncoder() dfc=df.copy() dfc['ord_2']=le.fit_transform(dfc['ord_2']) dfc
+le=LabelEncoder() dfc=df.copy()
+
+dfc['ord_2']=le.fit_transform(dfc['ord_2']) dfc
 
 <img width="644" height="569" alt="image" src="https://github.com/user-attachments/assets/58c18f39-b840-469c-b258-9bfb062183ba" />
 
@@ -74,6 +78,7 @@ df=pd.read_csv("/content/data.csv")
 df
 
 <img width="622" height="439" alt="image" src="https://github.com/user-attachments/assets/6374ec15-ef68-41da-9063-8462ab23088b" />
+
 be=BinaryEncoder()
 
 nd=be.fit_transform(df['Ord_2'])
@@ -116,9 +121,13 @@ df
 df.skew()
 
 <img width="434" height="243" alt="image" src="https://github.com/user-attachments/assets/cc5a4dc7-eb28-44a4-8e29-391c833116c6" />
+
 np.log(df["Highly Positive Skew"])
+/
 <img width="470" height="557" alt="image" src="https://github.com/user-attachments/assets/f1239be4-e995-42cc-a847-15120f60efe0" />
+
 np.reciprocal(df["Moderate Positive Skew"])
+
 <img width="536" height="586" alt="image" src="https://github.com/user-attachments/assets/08860d7d-d05f-4286-970c-14d06a83ac3c" />
 
 np.sqrt(df["Highly Positive Skew"])
@@ -145,7 +154,14 @@ df.skew()
 
 <img width="615" height="354" alt="image" src="https://github.com/user-attachments/assets/6fb5c6eb-259c-438e-91f8-dbda9f6cc2c9" />
 
-from sklearn.preprocessing import QuantileTransformer qt=QuantileTransformer(output_distribution='normal') df["Moderate Negative Skew_1"]=qt.fit_transform(df[["Moderate Negative Skew"]]) df
+from sklearn.preprocessing import QuantileTransformer
+
+
+qt=QuantileTransformer(output_distribution='normal')
+
+df["Moderate Negative Skew_1"]=qt.fit_transform
+
+(df[["Moderate Negative Skew"]]) df
 
 
 
